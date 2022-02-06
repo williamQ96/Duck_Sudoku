@@ -3,8 +3,9 @@ Isolate to the extent possible values that
 control choices we could make in variations
 on the game, such as the dimension (9x9 vs 16x16, etc),
 symbols, etc.
+Author: Michal Young, 2019
+Modified: Boyana Norris, 2022
 """
-
 # ---------  Configuration of the model component ----------
 # Dimension of board.  In principle we could
 # do 9x9, 16x16, 25x25, etc.
@@ -38,7 +39,4 @@ COLOR_KNOWN = "#ccffcc"       # Green
 COLOR_UNKNOWN = "#ffffcc"     # Beige
 COLOR_WORKING = "#ffccff"     # Pink
 
-
-
-
-
+UPDATE_DELAY = 0.05           # delay between individual tile updates, in seconds

@@ -1,5 +1,6 @@
 # graphics
-Graphics infrastructure for CIS 211, Winter 2018 at University of Oregon; fork of Zelle's graphics.py
+Graphics infrastructure for CIS 211, Winter 2022 
+at University of Oregon; fork of Zelle's graphics.py
 
 Initially this contains just a copy of Zelle's graphics.py.  It is
 unclear what I may add, and whether or not I may make some revisions
