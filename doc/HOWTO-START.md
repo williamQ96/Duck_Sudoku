@@ -209,7 +209,7 @@ define a ``Observer`` class that it can use:
 
 ```python
 # ---------------
-# Listeners (base class)
+# Observer (base class)
 # ---------------
 
 class Observer(object):
@@ -280,14 +280,14 @@ class TileEvent(Event):
         return f"{repr(self.tile)}"
 ```
 
-Listeners that need to receive TileEvents, like our view component,
-will be TileListeners:
+Observers that need to receive TileEvents, like our view component,
+will be TileObservers:
 
 ```python
-class TileListener(Observer):
+class TileObserver(Observer):
     def notify(self, event: TileEvent):
         raise NotImplementedError(
-            "TileListener subclass needs to override notify(TileEvent)")
+            "TileObserver subclass needs to override notify(TileEvent)")
 ```
 
 Objects that produce TileEvents, on the other hand, will be
