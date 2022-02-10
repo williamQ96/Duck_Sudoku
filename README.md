@@ -11,3 +11,5 @@ search to solve harder puzzles.
 We will use a model-view-controller organization to 
 associate a graphical display with the game. 
 
+Start here: https://github.com/CIS-UO/Duck_Sudoku/blob/master/doc/HOWTO-START.md
+
