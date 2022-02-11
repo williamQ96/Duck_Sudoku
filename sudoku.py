@@ -1,7 +1,27 @@
 """
 File: sudoku.py
 
-Sudoku solver with optional displays
+Sudoku solver with optional displays. To solve a puzzle from the data/ folder
+without any graphics, on the Console or Terminal:
+    python3 sudoku.py data/easy.sdk
+To show the graphical view, first click on "View Desktop" in CR, then 
+run with:
+    python3 sudoku.py -d data/easy.sdk
+
+In Coding Rooms, you can change the settings and configure your RUN button
+to use a different data file by specifying the above command as a "Custom Command"
+under the "Run Configuration" option.
+
+General usage: python3 sudoku.py [-h] [-d] [sdk_file]
+
+Sudoku solver
+
+positional arguments:
+  sdk_file
+
+options:
+  -h, --help     show this help message and exit
+  -d, --display  Graphical display
 """
 
 import argparse

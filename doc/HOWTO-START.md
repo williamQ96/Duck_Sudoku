@@ -176,9 +176,9 @@ messages:
 
 ```python
 import logging
-logging.basicConfig()
+# change the level to logging.INFO to disable debug messages
+logging.basicConfig(level = logging.DEBUG)
 log = logging.getLogger(__name__)
-log.setLevel(logging.DEBUG)
 ```
 
 When we don't want so many messages, we can set it to
@@ -742,7 +742,7 @@ class TestBoardGroups(unittest.TestCase):
                     counts[tile] = 0
                 counts[tile] += 1
         for tile in counts:
-            self.assertEqual(counts[tile], 3)      
+            self.assertEqual(counts[tile], 3)    
 ```
 
 The test case is not perfect.  It's conceivable that I could
