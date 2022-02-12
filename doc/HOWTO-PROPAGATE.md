@@ -8,7 +8,7 @@ solve simple puzzles.  Later
 you will use the constraint propagation
 solver as one part of a solver that performs
 recursive guess-and-check search to solve
-*all* Sudoku puzzles.
+*all* Sudoku puzzles. 
 
 Recall that when we created the `Board`
 object, we created not only the primary
@@ -32,7 +32,9 @@ is based on the rule that a tile value may not
 be duplicated in any row, column, or block.
 When `naked_single` is working, you will have
 a working solver that can solve
-some very simple Sudoku puzzles.
+some very simple Sudoku puzzles. 
+(You can see many other possible strategies which you 
+will **not** be implementing [here](https://www.sudoku9981.com/sudoku-solving/)).
 
 Next you will implement a tactic called
 *hidden single*.   The hidden single tactic
@@ -84,8 +86,7 @@ In the example above, only a few tiles have been filled in,
 # Inferring Values
 
 There are many tactics for inferring the value a tile must
-take.  We will use two of the most basic tactics described at
-[The Sadman Sudoku site](http://www.sadmansoftware.com/sudoku/solvingtechniques.php).
+take.  
 You may also find it useful to review the *pencil marks*
 technique that many people use to keep track of possible
 tile values, because our *candidates* structure is essentially
@@ -96,13 +97,15 @@ is a good introduction.
 ## Naked Single
 
 The simplest of these is called "naked single", "sole candidate", or
-"singleton".  If you solve Sudoku by hand, you may use "pencil marks"
+"singleton".
+If you solve Sudoku by hand, you may use "pencil marks"
 to indicate the values that can appear in a tile.  If a 3 appears
 anywhere in the row, you mark off the 3 in the "pencil marks".
 If a 3 appears anywhere in the column or block, you likewise
 mark off the "3" in the pencil marks for tile.  If there is only
 one pencil mark that is not crossed off, then we can determine
-that the tile must hold that value.
+that the tile must hold that value.  
+(See an [example](https://www.sudoku9981.com/sudoku-solving/naked-single.php).)
 
 If we applied this tactic tile-by-tile, scanning the row, column,
 and block that the tile belongs to, we would scan each row, column, and block
@@ -264,7 +267,7 @@ two candidate values.  But suppose only one of those tiles has
 candidate value 3.  Even though the tile that has candidate value 3
 may have other candidate values, we know it must hold the 3 because
 there is no other place to put it.  This is the *hidden single*
-solving technique.
+solving technique (see [example](https://www.sudoku9981.com/sudoku-solving/hidden-single.php)).
 
 In pseudocode, we can summarize the hidden single technique this way:
 
