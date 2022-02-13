@@ -348,6 +348,12 @@ We could initialize the tile this way:
 
 ```python
     def __init__(self, row: int, col: int, value=UNKNOWN):
+        """Constructor for a new tile.
+        Args:
+            row:  row number of tile
+            col:  column number of tile
+            value:  initial value of tile
+        """
         super().__init__()
         assert value == UNKNOWN or value in CHOICES
         self.row = row
@@ -365,13 +371,23 @@ initialization into a separate ``set_value`` method:
 
 ```python
     def __init__(self, row: int, col: int, value=UNKNOWN):
-        super().__init__()
+        """Constructor for a new tile.
+        Args:
+            row:  row number of tile
+            col:  column number of tile
+            value:  initial value of tile
+        """  
+	super().__init__()
         assert value == UNKNOWN or value in CHOICES
         self.row = row
         self.col = col
         self.set_value(value)
 
     def set_value(self, value: str):
+        """Set the value of this tile.
+        Args:
+            value: new tile value 
+        """
         if value in CHOICES:
             self.value = value
             self.candidates = {value}
@@ -396,7 +412,12 @@ belongs to the candidates set:
 
 ```python
     def could_be(self, value: str) -> bool:
-        """True iff value is a candidate value for this tile"""
+        """True iff value is a candidate value for this tile
+        Args:
+            value:  value to test
+        Returns:
+            True iff value is a candidate value for this tile.
+	"""
         return value in self.candidates
 
 ```
@@ -742,7 +763,7 @@ class TestBoardGroups(unittest.TestCase):
                     counts[tile] = 0
                 counts[tile] += 1
         for tile in counts:
-            self.assertEqual(counts[tile], 3)    
+            self.assertEqual(counts[tile], 3)  
 ```
 
 The test case is not perfect.  It's conceivable that I could
